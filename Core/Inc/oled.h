@@ -1,20 +1,14 @@
-/*
- * OLED.h
- *
- *  Created on: Aug 22, 2024
- *      Author: 王滋行
- */
 
 #ifndef INC_OLED_H_
 #define INC_OLED_H_
 
 #include "main.h"
 extern I2C_HandleTypeDef hi2c1;
-
-#define OLED_DEV_ADDRESS 	0x78
-#define OLED_CMD_ADDRESS 	0x00
-#define OLED_DATA_ADDRESS	0x40
-
+//引用main函数中使用的iic1
+#define OLED_DEV_ADDRESS 	0x78//设备地址
+#define OLED_CMD_ADDRESS 	0x00//oled写命令地址
+#define OLED_DATA_ADDRESS	0x40//oled写数据地址
+//定义oled中设备，写命令，写数据的地址
 // 内部函数
 void _writeCMD(uint8_t cmd);
 void _writeDATA(uint8_t data);

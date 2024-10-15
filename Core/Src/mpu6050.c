@@ -64,16 +64,15 @@ void MPU6050_Init(void)//初始化
 
 void MPU6050_Read_Accel(void)//读取加速度
 {
-	uint8_t Rec_Data[6];
-	HAL_I2C_Mem_Read(&hi2c2, MPU6050_ADDR, ACCEL_XOUT_H_REG, 1, Rec_Data, 6, 1000);
-	Accel_X_RAW = (int16_t)(Rec_Data[0] << 8 | Rec_Data[1]);
-	Accel_Y_RAW = (int16_t)(Rec_Data[2] << 8 | Rec_Data[3]);
-	Accel_Z_RAW = (int16_t)(Rec_Data[4] << 8 | Rec_Data[5]);
+	uint8_t Rec_Data[6];//定义存储六个字节的数据，因为加速度计以两个字节存储数据，所以定义六个字节存储加速度的x，y，z值。
+	HAL_I2C_Mem_Read(&hi2c2, MPU6050_ADDR, ACCEL_XOUT_H_REG, 1, Rec_Data, 6, 1000);//读寄存器的数值，一次性将六个字节取出赋值给数组。
+	Accel_X_RAW = (int16_t)(Rec_Data[0] << 8 | Rec_Data[1]);//每个轴的数据由两个字节组成，第一字节为高8位，第二字节为低8位
+	Accel_Y_RAW = (int16_t)(Rec_Data[2] << 8 | Rec_Data[3]);//将第一字节的数据左移八位，相当于乘上256，并与第二字节相与，进行数据融合，得到x轴加速度
+	Accel_Z_RAW = (int16_t)(Rec_Data[4] << 8 | Rec_Data[5]);//y，z轴加速度同理得到
 	Ax = Accel_X_RAW / 2048.0;
 	Ay = Accel_Y_RAW / 2048.0;
-	Az = Accel_Z_RAW  / 2048.0 - 0.5;//此处多减0.5是我的硬件问题，如果你硬件是好的，就不用减
+	Az = Accel_Z_RAW  / 2048.0 - 0.5;//
 }
-
 void MPU6050_Read_Gyro(void)//读取角速度
 {
 	uint8_t Rec_Data[6];

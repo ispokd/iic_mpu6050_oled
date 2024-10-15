@@ -3,7 +3,7 @@
 <title>Static Call Graph - [MPU6050_TEST\MPU6050_TEST.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image MPU6050_TEST\MPU6050_TEST.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Mon Oct 14 23:21:54 2024
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Tue Oct 15 16:27:43 2024
 <BR><P>
 <H3>Maximum Stack Usage =        384 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -92,8 +92,8 @@ Function Pointers
 Global Symbols
 </H3>
 <P><STRONG><a name="[42]"></a>__main</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, __main.o(!!!main))
-<BR><BR>[Calls]<UL><LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload
-<LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry
+<BR><BR>[Calls]<UL><LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry
+<LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload
 </UL>
 
 <P><STRONG><a name="[43]"></a>__scatterload</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __scatter.o(!!!scatter))
@@ -205,8 +205,8 @@ Global Symbols
 <P><STRONG><a name="[d4]"></a>__rt_lib_shutdown_user_alloc_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$0000000C))
 
 <P><STRONG><a name="[44]"></a>__rt_entry</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry.o(.ARM.Collect$$rtentry$$00000000))
-<BR><BR>[Called By]<UL><LI><a href="#[45]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload_rt2
-<LI><a href="#[42]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__main
+<BR><BR>[Called By]<UL><LI><a href="#[42]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__main
+<LI><a href="#[45]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload_rt2
 </UL>
 
 <P><STRONG><a name="[d5]"></a>__rt_entry_presh_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$00000002))
@@ -457,12 +457,12 @@ Global Symbols
 <P><STRONG><a name="[63]"></a>_printf_fp_dec_real</STRONG> (Thumb, 620 bytes, Stack size 104 bytes, _printf_fp_dec.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 324<LI>Call Chain = _printf_fp_dec_real &rArr; _fp_digits &rArr; _btod_etento &rArr; _btod_emul &rArr; _e2e
 </UL>
-<BR>[Calls]<UL><LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ARM_fpclassify
+<BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_post_padding
+<LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_pre_padding
+<LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ARM_fpclassify
 <LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_fp_infnan
 <LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_locale
 <LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fp_digits
-<LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_post_padding
-<LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_pre_padding
 </UL>
 <BR>[Called By]<UL><LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_fp_dec
 </UL>
@@ -1023,9 +1023,9 @@ Global Symbols
 <P><STRONG><a name="[e6]"></a>__aeabi_dadd</STRONG> (Thumb, 0 bytes, Stack size 16 bytes, daddsub_clz.o(x$fpl$dadd), UNUSED)
 
 <P><STRONG><a name="[aa]"></a>_dadd</STRONG> (Thumb, 332 bytes, Stack size 16 bytes, daddsub_clz.o(x$fpl$dadd), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_dretinf
+<BR><BR>[Calls]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_dsub1
+<LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_dretinf
 <LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_dnaninf
-<LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_dsub1
 </UL>
 
 <P><STRONG><a name="[ad]"></a>__fpl_dcheck_NaN1</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, dcheck1.o(x$fpl$dcheck1))
@@ -1072,8 +1072,8 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[b0]"></a>_dsub</STRONG> (Thumb, 464 bytes, Stack size 32 bytes, daddsub_clz.o(x$fpl$dsub), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_dnaninf
-<LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_dadd1
+<BR><BR>[Calls]<UL><LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_dadd1
+<LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_dnaninf
 </UL>
 
 <P><STRONG><a name="[a4]"></a>__aeabi_f2d</STRONG> (Thumb, 0 bytes, Stack size 16 bytes, f2d.o(x$fpl$f2d))
